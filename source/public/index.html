@@ -1,0 +1,85 @@
+<!DOCTYPE>
+<html ng-app="myApps">
+<head>
+    <title>AimFit</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+<script src="app.js"></script>
+<script src="js/angular-ui-router.js"></script>
+<script src="controllers/controller.js"></script>
+<script src="controllers/homeCtrl.js"></script>
+<script src="controllers/aboutCtrl.js"></script>
+<script src="controllers/contactCtrl.js"></script>
+<script src="controllers/home_landing.js"></script>
+
+<script src="directives/contactCard.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 50%;
+      height: 50%;
+      margin: auto;
+  }
+  </style>
+
+    </head>
+<body>
+     <div class="container "  ng-controller="AppCtrl">
+    <h1>Welcome to AimFit</h1>
+   
+    <!--table class ="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>Action</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+        
+        <tbody>
+            <tr>
+                <td><input class="form-control" ng-model="contact.name"></td>
+                <td><input class="form-control" ng-model="contact.email"></td>       
+                <td><input class="form-control" ng-model="contact.number"></td>  
+                <td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
+                <td><button class="btn btn-info" ng-click="update()">Update</button></td>
+            </tr>
+        <tr ng-repeat="contact in contactList" >
+            <th>{{contact.name}}</th>
+            <th>{{contact.email}}</th>
+            <th>{{contact.number}}</th>
+            <td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove Contact</button></td>
+            <td><button class="btn warning" ng-click="edit(contact._id)">Edit</button></td>
+            </tr>
+        </tbody>
+    </table-->
+
+    
+
+<!-- MAIN CONTENT -->
+<div class="container main_container">
+
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    <header ng-include="'templates/nav.html'"></header>
+    <div ui-view></div>
+    <header ng-include="'templates/footer.html'"></header>
+
+</div>
+   
+
+    </body>
+</html>
+

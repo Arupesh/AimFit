@@ -1,0 +1,42 @@
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 50%;
+      height: 50%;
+  }
+
+ .carousalmargin{
+	margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 50px;
+
+  }
+
+  #coreBodyCSS
+  {
+  	margin-top: 0px;
+    margin-bottom: 100px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+.redborder{
+  border: 1px solid red;
+}
+
+.greenborder {
+  border: 1px solid green;
+}
+
+.main_container {
+	padding: 0px !important;
+}
+.tour_page .thumbnail a>img {
+	width:240px;
+	height:160px;
+}
+.tour_page .thumbnail{
+	width: 290px;
+    height: 246px;
+}
+    
