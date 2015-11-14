@@ -28,24 +28,19 @@ myApp.config(function($stateProvider,$urlRouterProvider){
   templateUrl:"templates/home_landing.html",
   controller: 'home_landingCtrl'
  })
+.state('signIn_landing',{
+  url:"/signIn_landing",
+  templateUrl:"templates/signIn_landing.html",
+  controller: 'signedInLandingCtrl'
+ })
+.state('map',{
+  url:"/map",
+  templateUrl:"templates/map.html",
+  controller: 'mapCtrl'
+ })
+.state('chat',{
+  url:"/chat",
+  templateUrl:"templates/chat.html",
+  controller: 'chatCtrl'
+ })
 });
-  /*
-myApp.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
-  alert("okat")
-    $urlRouterProvider.otherwise('/');
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'home.html',
-        controller: 'homeCtrl'
-      })
-      .state('about', {
-        url: '/about',
-        templateUrl: 'about.html',
-        controller: 'aboutCtrl'
-      })
-      .state('contact', {
-        url: '/contact',
-        templateUrl: 'contact.html'
-      })
-  }])*/

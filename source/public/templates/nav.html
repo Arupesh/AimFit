@@ -8,6 +8,7 @@
         <li><a ui-sref="about">Sign IN</a></li>
         <li><a ui-sref="contact">Sign UP</a></li>
         <li><a ui-sref="tour">Take a Tour</a></li>
+        <li ng-hide="loggedIn" class="pull-right" ng-click="logOut();"><a ui-sref="home">Log out</a></li>
     </ul>
 </nav>
 

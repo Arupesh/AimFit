@@ -1,0 +1,14 @@
+<h1>Chat with our Support Team...</h1>
+<div>
+		<div id="chatWrap">
+			<p ng-repeat="msg in msgs track by $index">{{msg}}</p>
+		</div>
+	</br>
+
+		<form role="form" ng-submit="sendMsg()" >
+			<div class="col-xs-4">
+				<input type="text" class="form-control input-lg " ng-model="msg.text"  />
+			</div>
+		<button type="submit" id="submitBtn" class="btn btn-default .btn-large btn-success">Submit</button>
+		</form>
+</div>

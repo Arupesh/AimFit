@@ -1,7 +1,14 @@
-myApp.controller('home_landingCtrl',['$scope',function($scope){
+myApp.controller('home_landingCtrl',['$scope','myService',function($scope,myService){
  		
  	$scope.muscleWorkout = function() {
-    alert("clicked")
-  };
+      };
 
+$scope.goBack=function(){
+	var data=myService.get();
+
+//alert("clicked"+JSON.stringify(data))
+
+history.back();
+
+};
  	}]);

@@ -19,11 +19,19 @@
 <script src="controllers/aboutCtrl.js"></script>
 <script src="controllers/contactCtrl.js"></script>
 <script src="controllers/home_landing.js"></script>
-
+<script src="controllers/signedInLandingCtrl.js"></script>
+<script src="controllers/mapCtrl.js"></script>
+<script src="controllers/chatCtrl.js"></script>
+<script type="text/javascript" src="lib/angular-socket-io-master/socket.js"></script>
+<script src="services/SocketFactory.js"></script>
 <script src="directives/contactCard.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
+  
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    
   <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
@@ -37,37 +45,6 @@
 <body>
      <div class="container "  ng-controller="AppCtrl">
     <h1>Welcome to AimFit</h1>
-   
-    <!--table class ="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Number</th>
-            <th>Action</th>
-            <th>&nbsp;</th>
-        </tr>
-    </thead>
-        
-        <tbody>
-            <tr>
-                <td><input class="form-control" ng-model="contact.name"></td>
-                <td><input class="form-control" ng-model="contact.email"></td>       
-                <td><input class="form-control" ng-model="contact.number"></td>  
-                <td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
-                <td><button class="btn btn-info" ng-click="update()">Update</button></td>
-            </tr>
-        <tr ng-repeat="contact in contactList" >
-            <th>{{contact.name}}</th>
-            <th>{{contact.email}}</th>
-            <th>{{contact.number}}</th>
-            <td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove Contact</button></td>
-            <td><button class="btn warning" ng-click="edit(contact._id)">Edit</button></td>
-            </tr>
-        </tbody>
-    </table-->
-
-    
 
 <!-- MAIN CONTENT -->
 <div class="container main_container">

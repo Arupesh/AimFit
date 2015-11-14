@@ -1,6 +1,11 @@
 var express = require('express');
 var app = express();
 app.use(express.static(__dirname +"/public"));
+var expressJwt = require('express-jwt');
+var jwt = require('jsonwebtoken');
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
+
 
 //var mongojs= require('mongojs');
 //var db =mongojs('contactlist',['contactlist']);
@@ -11,6 +16,23 @@ app.use(passport.initialize());
 var bodyParser = require('body-parser');
 var multer = require('multer'); // v1.0.5
 var upload = multer(); // for parsing multipart/form-data
+
+
+
+io.sockets.on('connection', function(socket){
+  console.log('a user connected');
+
+  socket.on('send msg',function(data){
+    console.log('send msg socket on called',data);
+
+    io.sockets.emit('get msg',data);
+  })
+  
+});
+
+ 
+
+
 
 
 app.use(bodyParser.json()); // for parsing application/json
@@ -100,5 +122,5 @@ app.put('/contactList/:id', function (req, res) {
 });
  
     
-app.listen(3000);
+server.listen(3000);
 console.log("Server is running on port 3000");
