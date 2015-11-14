@@ -1,7 +1,7 @@
 <h1>Chat with our Support Team...</h1>
 <div>
 		<div id="chatWrap">
-			<p ng-repeat="msg in msgs track by $index">{{msg}}</p>
+			<p ng-repeat="msg in msgs track by $index">{{msg.name}} : {{msg.msg}}</p>
 		</div>
 	</br>
 
