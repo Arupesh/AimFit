@@ -1,13 +1,20 @@
-myApp.controller('signedInLandingCtrl',['$scope','myService',"$location",function($scope,myService,$location){
+myApp.controller('signedInLandingCtrl',['$scope','myService','logOutService',"$location",function($scope,myService,logOutService,$location){
 		
 //alert($scope.loggedIn)
-		$scope.loggedIn = false;
+
+var logOutFlag =logOutService.get();
+		//$scope.name=user.data.name;
+		console.log("logOutFlag>>"+logOutFlag)
+		
+		$scope.loggedIn = !logOutFlag;
+
+
+
 		var user =myService.get();
 		$scope.name=user.data.name;
 
 		
 		$scope.getMap = function(user) {
-			alert(1)
 			$location.path('/map');
 		};
  	}]);

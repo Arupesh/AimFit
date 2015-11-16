@@ -1,5 +1,5 @@
 <!-- NAVIGATION -->
-<nav class="navbar navbar-inverse" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation" ng-controller="homeCtrl">
     <div class="navbar-header">
         <a class="navbar-brand" ui-sref="#"></a>
     </div>
@@ -8,7 +8,7 @@
         <li><a ui-sref="about">Sign IN</a></li>
         <li><a ui-sref="contact">Sign UP</a></li>
         <li><a ui-sref="tour">Take a Tour</a></li>
-        <li ng-hide="loggedIn" class="pull-right" ng-click="logOut();"><a ui-sref="home">Log out</a></li>
+        <li ng-hide="loggedIn" class="pull-right"><a ui-sref="home">Log out</a></li>
     </ul>
 </nav>
 

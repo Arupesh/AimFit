@@ -43,4 +43,25 @@ myApp.config(function($stateProvider,$urlRouterProvider){
   templateUrl:"templates/chat.html",
   controller: 'chatCtrl'
  })
+.state('deals',{
+  url:"/deals",
+  templateUrl:"templates/deals.html",
+  controller: 'dealsCtrl'
+ })
+.state('muscleWorkout',{
+  url:"/muscleWorkout",
+  templateUrl:"templates/muscleWorkout.html",
+  controller: 'muscleWorkoutCtrl'
+ })
+.state('coreBodyWorkout',{
+  url:"/coreBodyWorkout",
+  templateUrl:"templates/coreBodyWorkout.html",
+  controller: 'coreBodyWorkoutCtrl'
+ })
+.state('questionForum',{
+  url:"/questionForum",
+  templateUrl:"templates/questionForum.html",
+  controller: 'questionForumCtrl'
+ })
+
 });

@@ -22,27 +22,31 @@
 <script src="controllers/signedInLandingCtrl.js"></script>
 <script src="controllers/mapCtrl.js"></script>
 <script src="controllers/chatCtrl.js"></script>
+<script src="controllers/dealsCtrl.js"></script>
+<script src="controllers/muscleWorkoutCtrl.js"></script>
+<script src="controllers/coreBodyWorkoutCtrl.js"></script>
+<script src="controllers/questionForumCtrl.js"></script>
 <script type="text/javascript" src="lib/angular-socket-io-master/socket.js"></script>
 <script src="services/SocketFactory.js"></script>
+<script src="services/httpServiceCalls.js"></script>
 <script src="directives/contactCard.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
-  
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     
-  <style>
+<style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 50%;
       height: 50%;
       margin: auto;
   }
-  </style>
+</style>
 
-    </head>
-<body>
+</head>
+    <body>
      <div class="container "  ng-controller="AppCtrl">
     <h1>Welcome to AimFit</h1>
 
@@ -52,7 +56,9 @@
     <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
     <header ng-include="'templates/nav.html'"></header>
     <div ui-view></div>
-    <header ng-include="'templates/footer.html'"></header>
+    </br>
+    </br>
+    <footer class="pull-right" ng-include="'templates/footer.html'"></footer>
 
 </div>
    

@@ -1,0 +1,12 @@
+[ 
+{"city": "Pune", "couponId": "PunAimFIT001", "discount":"15%"}, 
+{"city": "Mumbai", "couponId": "MumAimFIT001", "discount":"10%"},
+{"city": "Kolkata", "couponId": "KolAimFIT001", "discount":"30%"}, 
+{"city": "Orissa", "couponId": "OriAimFIT001", "discount":"30%"}, 
+{"city": "Chennai", "couponId": "ChnAimFIT001", "discount":"10%"}, 
+{"city": "Delhi", "couponId": "DelAimFIT001", "discount":"8.5%"}, 
+{"city": "Ahmedabad", "couponId": "AhmAimFIT001", "discount":"15%"}, 
+{"city": "Chandigarh", "couponId": "ChaAimFIT001", "discount":"20%"}, 
+{"city": "Nagpur", "couponId": "NagAimFIT001", "discount":"20%"}, 
+{"city": "Banglaore", "couponId": "BanAimFIT001", "discount":"10%"} 
+]

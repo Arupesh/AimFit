@@ -1,0 +1,16 @@
+<h1>Coupons As per Your City :-</h1>
+<div>
+		<div id="coupon">
+			<table>
+				<td>CITY</td>
+   			    <td>COUPONID</td>
+   			    <td>DISCOUNT OFFER</td>
+  				<tr ng-repeat="data in coupons">
+  			    <td>{{ data.city | uppercase}}</td>
+   			    <td>{{ data.couponId }}</td>
+   			    <td>{{ data.discount }}</td>
+  			    </tr>
+           </table>
+		</div>
+	
+</div>
