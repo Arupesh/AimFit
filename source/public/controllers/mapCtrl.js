@@ -1,33 +1,16 @@
+
 var cities = [
               {
-                  city : 'India',
+                  city : 'Gym',
                   desc : 'This is the best country in the world!',
-                  lat : 23.200000,
-                  long : 79.225487
+                  lat : 11.0164601,
+                  long : 76.3581787
               },
               {
-                  city : 'New Delhi',
+                  city : 'Fitness',
                   desc : 'The Heart of India!',
-                  lat : 28.500000,
-                  long : 77.250000
-              },
-              {
-                  city : 'Mumbai',
-                  desc : 'Bollywood city!',
-                  lat : 19.000000,
-                  long : 72.90000
-              },
-              {
-                  city : 'Kolkata',
-                  desc : 'Howrah Bridge!',
-                  lat : 22.500000,
-                  long : 88.400000
-              },
-              {
-                  city : 'Chennai  ',
-                  desc : 'Kathipara Bridge!',
-                  lat : 13.000000,
-                  long : 80.250000
+                  lat : 12.0164601,
+                  long : 76.3581787
               }
           ];
 
@@ -35,22 +18,71 @@ var cities = [
          // var sampleApp = angular.module('mapsApp', []);
          myApp.controller('mapCtrl',["$scope","$rootScope","$http","$location","myService","webServices",
                           function($scope,$rootScope, $http, $location,myService,webServices){
-         // myApp.controller('mapCtrl', function ($scope) {
-//alert("called")
-             var mapOptions = {
-                  zoom: 4,
-                  center: new google.maps.LatLng(25,80),
-                  mapTypeId: google.maps.MapTypeId.TERRAIN
-              }
+       
+          var latitude,longitude,center;
+          function showLocation(position) {
+             var latitude = position.coords.latitude;
+             var longitude = position.coords.longitude;
+            //alert("Latitude : " + latitude + " Longitude: " + longitude);
+            createMarker(latitude ,longitude);
+         }
 
-              $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+         function errorHandler(err) {
+            if(err.code == 1) {
+               alert("Error: Access is denied!");
+            }
+            
+            else if( err.code == 2) {
+               alert("Error: Position is unavailable!");
+            }
+         }
+            if(navigator.geolocation){
+               // timeout at 60000 milliseconds (60 seconds)
+               var options = {timeout:60000};
+               navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+            }
+            
+            else{
+               alert("Sorry, browser does not support geolocation!");
+            }
 
               $scope.markers = [];
               
+              
               var infoWindow = new google.maps.InfoWindow();
               
-              var createMarker = function (info){
+              var createMarker = function (latitude,longitude){
+                  console.log("createMarker",latitude,longitude)
+                  var mapOptions = {
+                  zoom: 8,
+                  center: new google.maps.LatLng(latitude,longitude),
+                  mapTypeId: google.maps.MapTypeId.TERRAIN
+              }
+
+                $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                  var marker = new google.maps.Marker({
+                      map: $scope.map,
+                      position: new google.maps.LatLng(latitude, longitude)
+                     // title: info.city
+                  });
+                  marker.content = '<div class="infoWindowContent">' + "You are here!!" + '</div>';
                   
+                  google.maps.event.addListener(marker, 'click', function(){
+                      infoWindow.setContent('<h3>' + "Welcome" + '</h3>' + marker.content);
+                      infoWindow.open($scope.map, marker);
+                  });
+                  
+                  $scope.markers.push(marker);
+                  
+                     for (i = 0; i < cities.length; i++){
+                        createGymMarker(cities[i]);
+                     }
+
+              }  
+             
+              
+               var createGymMarker = function (info){
+                  console.log("createGymMarker",info)
                   var marker = new google.maps.Marker({
                       map: $scope.map,
                       position: new google.maps.LatLng(info.lat, info.long),
@@ -64,13 +96,9 @@ var cities = [
                   });
                   
                   $scope.markers.push(marker);
-                  
+      
               }  
               
-              for (i = 0; i < cities.length; i++){
-                  createMarker(cities[i]);
-              }
-
               $scope.openInfoWindow = function(e, selectedMarker){
                   e.preventDefault();
                   google.maps.event.trigger(selectedMarker, 'click');

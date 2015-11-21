@@ -1,10 +1,11 @@
 'use strict';
 
-myApp.controller('aboutCtrl',["$scope","$rootScope","$http","$location","myService","webServices",
-                          function($scope,$rootScope, $http, $location,myService,webServices){
+myApp.controller('aboutCtrl',["$scope","$rootScope","$http","$location","myService","webServices","authFact","$state",
+                          function($scope,$rootScope, $http, $location,myService,webServices,authFact,$state){
  	
   $scope.submitted = false;
   $scope.someProperty = true;
+
 
   $scope.signInForm = function(user) {
     
@@ -42,6 +43,28 @@ myApp.controller('aboutCtrl',["$scope","$rootScope","$http","$location","myServi
                         };
 
                 };
+
+
+  $scope.FBLogin = function() {
+    FB.login(function(response) {
+    if (response.authResponse) {
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+     console.log('Good to see you, ', JSON.stringify(response) + '.');
+     myService.set(response);
+     var accessToken=FB.getAuthResponse().accessToken;
+     console.log('accessToken, ', accessToken + '.');
+     authFact.setAccessToken(accessToken);
+     $state.go('signIn_landing');
+      //event.preventDefault();
+     });
+    } else {
+     console.log('User cancelled login or did not fully authorize.');
+    }
+});
+
+    };
+   
 
  	}]);
 

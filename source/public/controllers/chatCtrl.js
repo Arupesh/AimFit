@@ -1,6 +1,6 @@
-myApp.controller('chatCtrl',["$scope","socket",function($scope,socket){
+myApp.controller('chatCtrl',["$scope","socket","$rootScope",function($scope,socket,$rootScope){
  	  $scope.msgs=[];
-
+    $rootScope.loggedIn= false;
     var person = prompt("Please enter your name", "Harry Potter");
     $scope.sendMsg=function(){
        socket.emit('send msg', {name : person , msg : $scope.msg.text} )

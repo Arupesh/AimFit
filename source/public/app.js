@@ -1,6 +1,6 @@
 //var myApp = angular.module('myApps',['ui.router']);
 var myApp = angular.module('myApps',['ui.router','app.directives.contactCard']);
-	
+
 
 myApp.config(function($stateProvider,$urlRouterProvider){
 	console.log("inside ui.router ")
@@ -31,7 +31,8 @@ myApp.config(function($stateProvider,$urlRouterProvider){
 .state('signIn_landing',{
   url:"/signIn_landing",
   templateUrl:"templates/signIn_landing.html",
-  controller: 'signedInLandingCtrl'
+  controller: 'signedInLandingCtrl',
+  authenticated: true
  })
 .state('map',{
   url:"/map",
@@ -41,12 +42,14 @@ myApp.config(function($stateProvider,$urlRouterProvider){
 .state('chat',{
   url:"/chat",
   templateUrl:"templates/chat.html",
-  controller: 'chatCtrl'
+  controller: 'chatCtrl',
+  authenticated: true
  })
 .state('deals',{
   url:"/deals",
   templateUrl:"templates/deals.html",
-  controller: 'dealsCtrl'
+  controller: 'dealsCtrl',
+  authenticated: true
  })
 .state('muscleWorkout',{
   url:"/muscleWorkout",
@@ -65,3 +68,42 @@ myApp.config(function($stateProvider,$urlRouterProvider){
  })
 
 });
+
+myApp.run(["$rootScope","$location","authFact",function ($rootScope,$location,authFact) {
+
+
+ //console.log('App is running'); 
+ $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+  console.log('App is toState'+JSON.stringify(toState)); 
+
+    if(toState.authenticated)
+    {//alert(toState.authenticated)
+      var userAuth=authFact.getAccessToken();
+      //alert(JSON.stringify(userAuth))
+      //alert(userAuth.length)
+      if (!userAuth || userAuth.length === undefined)
+      {
+        $location.path('/');
+      }
+    }
+});
+  
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1494249820879100',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+ 
+}]);

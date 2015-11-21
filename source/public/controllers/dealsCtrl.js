@@ -1,5 +1,7 @@
-myApp.controller('dealsCtrl',["$scope","webServices",function($scope,webServices){
+myApp.controller('dealsCtrl',["$scope","webServices","$rootScope",function($scope,webServices,$rootScope){
  	
+
+	$rootScope.loggedIn= false;
  	var coupons=[];
  	var promise=webServices.getCoupons();
     promise.then(function(response){ 
