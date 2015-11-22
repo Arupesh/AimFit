@@ -66,6 +66,21 @@ myApp.config(function($stateProvider,$urlRouterProvider){
   templateUrl:"templates/questionForum.html",
   controller: 'questionForumCtrl'
  })
+.state('muscleWorkoutDiet',{
+  url:"/muscleWorkoutDiet",
+  templateUrl:"templates/muscleWorkoutDiet.html",
+  controller: 'muscleWorkoutDietCtrl'
+ })
+.state('coreBodyWorkoutDiet',{
+  url:"/coreBodyWorkoutDiet",
+  templateUrl:"templates/coreBodyWorkoutDiet.html",
+  controller: 'coreBodyWorkoutDietCtrl'
+ })
+.state('motivationTestimonies',{
+  url:"/motivationTestimonies",
+  templateUrl:"templates/motivationTestimonies.html",
+  controller: 'motivationTestimoniesCtrl'
+ })
 
 });
 

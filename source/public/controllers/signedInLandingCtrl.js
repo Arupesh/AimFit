@@ -3,7 +3,7 @@ myApp.controller('signedInLandingCtrl',['$scope','myService','$rootScope',"$loca
 //alert("signedInLandingCtrl called")
 
 	$rootScope.loggedIn= false;
-
+	
 	var user =myService.get();
 	console.log("Using fb data",user)
 	$scope.name=user.name;

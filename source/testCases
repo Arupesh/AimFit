@@ -1,0 +1,108 @@
+Creating a scenario where the user enters the application and user can register by clicking on the Sign Up button in the Home screen.
+
+1. User will undergo the registration process by sharing his or her details.
+2. The user once registered will have access to the registered landing page.
+3. The Log out button will show up on the top right corner.
+
+
+Creating a scenario where the user enters the application using Facebook Login. 
+
+1. On clicking on the Login with Facebook button the user will be prompted to log in through Facebook login page.
+2. On proper login using one’s Facebook credentials the user can be redirected to the landing page.
+3. On improper login, user will be prompted with invalid credential error.
+4. The Log out button will show up on the top right corner.
+
+Creating a scenario where the user enters the application using application Login.
+
+1. On proper login using username and email the user can be redirected to the landing page.
+2. On improper login, user will be prompted with invalid credential error.
+3. The Log out button will show up on the top right corner.
+4. The user can now have access to best deals near them, user can chat with the support team and check the google map to search which the nearest AimFit tied up gym’s or fitness centre.
+
+Creating a scenario where the user Takes a tour post succesfull logging in.
+1.  User enters the application and directly clicks on the Take a tour button.
+2.  User is then routed to the tour page.
+3.  The user can see Muscle Workout, Core body Workout and Question forum thumbnails.
+4.  The user now will  be able to see Muscle Workout Diet plans, Core body Workout Diet plans
+    and Motivation thumbnails since he is logged in.
+5.  Log out button will not show up.
+
+Creating a scenario where the user Takes a tour without logging in.
+1.  User enters the application and directly clicks on the Take a tour button.
+2.  User is then routed to the tour page.
+3.  The user can see Muscle Workout, Core body Workout and Question forum thumbnails.
+4.  The user will not be able to see Muscle Workout Diet plans, Core body Workout Diet plans
+    and Motivation thumbnails since he is not logged in.
+5.  Log out button will not show up.
+
+
+Creating a scenario where the user clicks on the option Talk to our support team .
+
+1.The user will be taken to the chat page.
+2. User will be prompted to share his name.
+3. On sharing his name, he can now start a chat session with the support team.
+4. The Log out button will show up on the top right corner.
+
+
+Creating a scenario where the user clicks on the option Best Deals option .
+
+1. The user will be taken to the deals page.
+2. User can now have access to the best deals in all the cities.
+3. The Log out button will show up on the top right corner.
+
+Creating a scenario where the user clicks on the option Find us on map option .
+
+1. The user will be taken to the map page.
+2. User can now check the nearest gym centers to his current location.
+3. The Log out button will show up on the top right corner.
+
+Creating a scenario where the user clicks on the option Find us on map option .
+
+1. The user will be taken to the map page.
+2. User can now check the nearest gym centers to his current location.
+3. The Log out button will show up on the top right corner.
+
+Creating a scenario where the user clicks on the  Muscle Workout option .
+
+1. The user will be taken to the map page.
+2. User can now check the muscle workout exercises.
+3. The Log out button will show up on the top right corner if the user is logged in.
+4. The Log out button will not show up on the top right corner if the user is not logged in.
+
+Creating a scenario where the user clicks on the  Core Body Workout option .
+
+1. The user will be taken to the map page.
+2. User can now check the core body exercises.
+3. The Log out button will show up on the top right corner if the user is logged in.
+4. The Log out button will not show up on the top right corner if the user is not logged in.
+
+Creating a scenario where the user clicks on the  Question forum option .
+
+1. The user will be taken to the map page.
+2. User can now have access to the most commmon FAQ's.
+3. The Log out button will show up on the top right corner if the user is logged in.
+4. The Log out button will not show up on the top right corner if the user is not logged in.
+
+Creating a scenario where the user clicks on the  Muscle Workout Diet Chart option .
+
+1. The user will be taken to the Muscle Workout Diet Chart page.
+2. User can now have access to the Muscle Workout Diet Chart.
+3. The Log out button will show up on the top right corner	.
+
+Creating a scenario where the user clicks on the  Core Body Workout Diet Chart option .
+
+1. The user will be taken to the Core Body Workout Diet Chart page.
+2. User can now have access to the Core Body Workout Diet Chart.
+3. The Log out button will show up on the top right corner.
+
+Creating a scenario where the user clicks on the  Motivation and Testimonies option .
+
+1. The user will be taken to the Motivation and Testimonies page.
+2. The Log out button will show up on the top right corner.
+
+
+Creating a scenario where the user clicks on the  Log Out button.
+
+1. The user will be logged out from the application.
+2. Once redirected to the Home page the user will be prompted with an alert informing the that the user has successfully logged out.
+3. Log out button will not show up on the top right corner if the user logged out.
