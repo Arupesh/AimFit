@@ -4,61 +4,54 @@
 
   <form class="form-horizontal" role="form">
     <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Name:</label>
+      <label class="control-label col-sm-2" for="pwd">Name:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" placeholder="Enter Your User Name">
+        <input type="text" class="form-control" id="email" ng-model="signup.name" placeholder="Enter Your User Name">
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Email ID:</label>
+      <label class="control-label col-sm-2" for="email">Email ID:</label>
       <div class="col-sm-10">          
-        <input type="email" class="form-control" id="pwd" placeholder="Enter emailID">
+        <input type="email" class="form-control" id="pwd" ng-model="signup.email" placeholder="Enter emailID">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Age:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="pwd" placeholder="Enter your age">
+        <input type="text" class="form-control" id="pwd" ng-model="signup.age" placeholder="Enter your age">
       </div>
     </div>	
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Height:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="pwd" placeholder="Enter your Height in centimeters">
+        <input type="text" class="form-control" id="pwd" ng-model="signup.height" placeholder="Enter your Height in centimeters">
       </div>
     </div>  
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Weight:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="pwd" placeholder="Enter your Weight in pounds">
+        <input type="text" class="form-control" id="pwd" ng-model="signup.weight" placeholder="Enter your Weight in pounds">
       </div>
     </div>  
     <div class="form-group">
         <label class="control-label col-sm-2">Gender</label>
         <div class="col-sm-10">
-            <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-default">
-                    <input type="radio" name="gender" value="male" /> Male
-                </label>
-                <label class="btn btn-default">
-                    <input type="radio" name="gender" value="female" /> Female
-                </label>
-                <label class="btn btn-default">
-                    <input type="radio" name="gender" value="other" /> Other
-                </label>
-            </div>
+            <label><input type="radio" name="test" ng-model="signup.gender" value="Male"/>Male</label>
+           <label><input type="radio" name="test" ng-model="signup.gender" value="Female"/>Female</label>
+           <label><input type="radio" name="test" ng-model="signup.gender" value="Other"/>Other</label>
+         
         </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Health History:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="pwd" placeholder="Enter any health history">
+        <input type="text" class="form-control" id="pwd" ng-model="signup.history" placeholder="Enter any health history">
       </div>
     </div>
    
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" ng-click="addContact(signup)">Submit</button>
       </div>
     </div>
   </form>
