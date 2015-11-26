@@ -43,8 +43,18 @@
 
               
         <!-- TH6 -->
+      <section class="row" ng-show="BMIDetailsAvail">
+          <div class="calculator-container ">
+              <p class="bmidescription" >Based on your weight of {{ weight }} pounds and height of {{ height }} inches, your BMI is: <span class="bmihealth">{{ calcBMI | number:2 }}</span>
+                <span class="bmiresult"> {{ BMIhealth}}</span></p>
+              <p class="bmihealth">Please go for  <a href="{{goToPage}}">{{workout}}</a> </p>
+          </div>
+      </section>
+
+    <p class="BMIDetailsNotAvail" ng-show="BMIDetailsNotAvail">Your Details are not Available with us, Kindly <a href="#/contact">Sign UP</a></p>
 
 
     </div><!--/row -->
+
 
 </div> <!-- end container -->

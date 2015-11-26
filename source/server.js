@@ -34,42 +34,9 @@ io.sockets.on('connection', function(socket){
 
  
 
-
-
-
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-
-
-// passport.use(new LocalStrategy(
-//   function(username, password, done) {
-//      console.log("LocalStrategy");
-//   if(username==password)
-//       return done(null, {username:username, firstname: 'abhilasha'}); 
-//   else
-//      return done(null, false, {message:'Unable to login'}); 
-
-//   }
-// )); 
-
-
-// passport.serializeUser(function(user, done) {
-//   done(null, user);
-// });
-
-// passport.deserializeUser(function(id, done) {
-//   User.findById(id, function (err, user) {
-//     done(err, user);
-//   });
-// });
-
-// app.post('/login',
-//   passport.authenticate('local'),function(req,res){
-//         console.log("req.body /login"+req.user);
-//         res.json(req.user);
-
-// });
 
 
 app.get('/contactList',function(req, res){

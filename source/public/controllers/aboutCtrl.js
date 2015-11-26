@@ -1,7 +1,7 @@
 'use strict';
 
-myApp.controller('aboutCtrl',["$scope","$rootScope","$http","$location","myService","webServices","authFact","$state",
-                          function($scope,$rootScope, $http, $location,myService,webServices,authFact,$state){
+myApp.controller('aboutCtrl',["$scope","$rootScope","$http","$location","myService","webServices","authFact","$state","webServiceSign",
+                          function($scope,$rootScope, $http, $location,myService,webServices,authFact,$state,webServiceSign){
  	
   $scope.submitted = false;
   $scope.someProperty = true;
@@ -10,19 +10,31 @@ myApp.controller('aboutCtrl',["$scope","$rootScope","$http","$location","myServi
   $scope.signInForm = function(user) {
     
     if ($scope.signin_form.$valid) {
-            var promise=webServices.getFriends();
+
+            var promise=webServiceSign.getSignInData();
+
             promise.then(function(response){ 
 
-            if (response.data.name === $scope.signin.name && response.data.email === $scope.signin.email)
-            {
-                myService.set(response); 
-               $location.path('/signIn_landing');
-            }
-            else
-            {
-               alert("Invalid Credentials");
-            }
-    });
+              console.log("Here is the res",response.data);
+              
+              angular.forEach( response.data, function( value, key ){ 
+
+              console.log("Here is the key",response.data[key] );
+                         if (response.data[key].name === $scope.signin.name && response.data[key].email === $scope.signin.email)
+                      {
+                          myService.set(response.data[key].name); 
+                         $state.go('signIn_landing');
+                         return;
+                      }
+                      else
+                      {
+                         alert("Invalid Credentials");
+                      }
+
+
+                  }); 
+             
+            });
 
 
     }

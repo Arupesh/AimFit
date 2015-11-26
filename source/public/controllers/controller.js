@@ -3,29 +3,31 @@
 //var myApp = angular.module('myApps',[]);
 
 
-myApp.controller('AppCtrl',['$scope', '$http',"$location",function ($scope,$http,$location)
+myApp.controller('AppCtrl',['$scope', '$http',"$location","webServiceSign",function ($scope,$http,$location,webServiceSign)
 {
     
-console.log("inside controller"); 
  
 var refresh=function(){
-        $http.get('/contactList').success(function(response){
-        console.log("got the data",response);                            
+       var promise= webServiceSign.getSignInData();
+       promise.then(function(response){ 
+        console.log("Now received the data",response);
         $scope.contactList=response;
-             });
+    });
         $scope.contact="";
     };
     
-refresh();
+//refresh();
 
 //Add contact function
 $scope.addContact=function(userData){
    alert("Data to be posted >>"+JSON.stringify(userData))
- $http.post('/contactList',userData).success(function(response){
- console.log(JSON.stringify(response));
- $location.path('/about');
- refresh();
- });
+
+   var promise= webServiceSign.postSignUpData(userData);
+       promise.then(function(response){ 
+       console.log("Now received the posted data",response);
+       $location.path('/about');
+       refresh();
+    });
 };
 
 //Remove contact function    

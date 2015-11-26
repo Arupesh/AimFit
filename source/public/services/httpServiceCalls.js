@@ -1,3 +1,25 @@
+ myApp.factory('webServiceSign',['$http',function($http){
+        return {
+         
+            getSignInData : function(){
+                return  $http.get('contactList').then(function(response){ //wrap it inside another promise using then
+                            console.log("get the data",response);
+                            return response;  //only return friends 
+                        });
+            },
+            postSignUpData : function(userData){
+                return  $http.post('/contactList',userData).then(function(response){ //wrap it inside another promise using then
+                            console.log("post the data",response);
+                            return response;  //only return friends 
+                        });
+            }
+        }
+    }]);
+
+
+
+
+
  myApp.factory('webServices',['$http',function($http){
         return {
             getFriends : function(){
@@ -12,6 +34,8 @@
             }
         }
     }]);
+
+
 
 myApp.factory('myService', function() {
  
